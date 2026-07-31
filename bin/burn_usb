@@ -1,0 +1,25 @@
+#!/bin/bash
+lsblk -o NAME,SIZE,MODEL,TRAN,MOUNTPOINT
+if [ $# -ne 2 ]; then
+    echo "Usage: $(basename "$0") <iso> <device>"
+    echo "Example: $(basename "$0") ubuntu.iso /dev/sdb"
+    exit 1
+fi
+
+if [ ! -f "$1" ]; then
+  echo "ISO not found: $1"
+  exit 1
+fi
+
+echo "This will erase ALL data on $2"
+read -rp "Continue? (yes/NO): " ans
+
+[[ "$ans" == "yes" ]] || exit 1
+
+echo "Unmounting $2 to ensure a clean write..."
+umount "$2"* 2>/dev/null || true
+
+sudo dd if="$1" of="$2" bs=4M status=progress conv=fsync
+sync
+
+echo "Done."

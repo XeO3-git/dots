@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+curl -X POST -H 'Authorization: Bearer sk_test_4LLfEp_uxy_pVha-IYKlfIIAvgUbm49hgWcCGCCzijc' \
+    https://engine.hyperbeam.com/v0/vm
