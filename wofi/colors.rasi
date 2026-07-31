@@ -1,0 +1,10 @@
+/* Gruvbox Dark */
+
+* {
+  al:   #00000000;
+  bg:   #282828FF;
+  bga:  #3c3836FF;
+  fg:   #ebdbb2FF;
+  fga:  #d5c4a1FF;
+  ac:   #689d6aFF;  /* aqua */
+}

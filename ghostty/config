@@ -1,0 +1,12 @@
+# Font configuration
+font-family = CaskaydiaMono Nerd Font
+font-size = 14
+
+# Window settings
+window-decoration = false
+background-opacity = 0.8
+
+# Terminal settings
+term = xterm-256color
+confirm-close-surface = false
+theme = Gruvbox Dark Hard
